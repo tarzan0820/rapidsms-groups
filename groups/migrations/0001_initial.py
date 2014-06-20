@@ -21,7 +21,7 @@ class Migration(SchemaMigration):
         db.create_table('groups_group_contacts', (
             ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True)),
             ('group', models.ForeignKey(orm['groups.group'], null=False)),
-            ('contact', models.ForeignKey(orm['rapidsms.contact'], null=False))
+            ('contact', models.ForeignKey(orm['rapidsms.Contact'], null=False))
         ))
         db.create_unique('groups_group_contacts', ['group_id', 'contact_id'])
 
